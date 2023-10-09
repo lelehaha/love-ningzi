@@ -663,7 +663,6 @@
     let content = document.getElementsByClassName("content");
     let warp = document.getElementsByClassName("warp");
     let btn = document.getElementsByClassName("btn");
-    console.log(content);
     let buttonCss = {
       backgroundColor: "#90d7ec",
       border: " 1px solid rgba(220,38,38,0.2) ",
@@ -760,6 +759,8 @@
         let problem = document.getElementsByClassName("problem");
         setStyle(problem[0], { display: "none" });
         sum = 0;
+        body.style.backgroundColor = "#fff";
+        warp[0].appendChild(button);
       }
     });
   </script>
