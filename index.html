@@ -1,556 +1,604 @@
+<!-- HelloKitty -->
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>给俺开心要</title>
+    <title>HelloKitty</title>
 </head>
 <style>
-    html,
-    body {
+    .content {
+        position:absolute;
         width: 100%;
-        height: 100%;
-        margin: 0;
-        padding: 0;
-        background-color: #161929;
-        position: relative;
-        overflow: hidden;
-        user-select: none;
+        left: 30%;
     }
+    #head {
+    position:absolute;
+    top:124px;
+    left:130px;
+    width:224px;
+    height:167px;
+    background-color:#FFF;
+    border:8px solid #000;
+    -moz-border-radius:160px;
+    -webkit-border-radius:160px;
+    border-radius:160px;
+    z-index:500;
+    -moz-transform:rotate(2deg);
+    -ms-transform:rotate(2deg);
+    -o-transform:rotate(2deg);
+    -webkit-transform:rotate(2deg);
+    transform:rotate(2deg);
+    -webkit-backface-visibility:hidden;
+    
+}
+.lefteye {
+    position:absolute;
+    top:97px;
+    left:45px;
+    width:19px;
+    height:24px;
+    background-color:#000;
+    -moz-border-radius:18px;
+    -webkit-border-radius:18px;
+    border-radius:18px;
+}
+.righteye {
+    position:absolute;
+    top:93px;
+    left:162px;
+    width:19px;
+    height:24px;
+    background-color:#000;
+    -moz-border-radius:18px;
+    -webkit-border-radius:18px;
+    border-radius:18px;
+}
+.nose {
+    position:absolute;
+    top:115px;
+    left:100px;
+    width:16px;
+    height:9px;
+    background-color:#FFB827;
+    border:6px solid #000;    
+    -moz-border-radius:25px;
+    -webkit-border-radius:25px;
+    border-radius:25px;
+}
+.leftwhiskers, .rightwhiskers {
+    background-color:#000;
+}
+.one {
+    position:absolute;
+    top:96px;
+    left:-1px;
+    width:20px;
+    height:9px;
+    -moz-border-radius:0 20px 15px 0;
+    -webkit-border-radius:0 20px 15px 0;
+    border-radius:0 20px 15px 0;
+    -moz-transform:rotate(6deg);
+    -ms-transform:rotate(6deg);
+    -o-transform:rotate(6deg);
+    -webkit-transform:rotate(6deg);
+}
+.one span {
+    display:block;
+    position:absolute;
+    left:-32px;
+    top:4px;
+    width:33px;
+    height:9px;
+    background-color:inherit;
+    -moz-border-radius: 35px 10px 10px;
+    -webkit-border-radius: 35px 10px 10px;
+    border-radius: 35px 10px 10px;
+    -moz-transform:rotate(-15deg);
+    -ms-transform:rotate(-15deg);
+    -o-transform:rotate(-15deg);
+    -webkit-transform:rotate(-15deg);
+}
+.two {
+    position:absolute;
+    top:120px;
+    left:6px;
+    width:15px;
+    height:8px;
+    -moz-border-radius:10px 20px 13px 10px;
+    -webkit-border-radius:10px 20px 13px 10px;
+    border-radius:10px 20px 13px 10px;
+    -moz-transform:rotate(-15deg);
+    -ms-transform:rotate(-15deg);
+    -o-transform:rotate(-15deg);
+    -webkit-transform:rotate(-15deg);
+}
+.two span {
+    display:block;
+    position:absolute;
+    top:0px;
+    left:-24px;
+    height:8px;
+    width:25px;
+    background-color:inherit;
+    -moz-border-radius:10px 0 0 15px;
+    -webkit-border-radius:10px 0 0 15px;
+    border-radius:10px 0 0 15px;
+    -moz-transform:rotate(-2deg);
+    -ms-transform:rotate(-2deg);
+    -o-transform:rotate(-2deg);
+    -webkit-transform:rotate(-2deg);
+}
+.three {
+    position:absolute;
+    top:138px;
+    left:20px;
+    width:15px;
+    height:8px;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    border-radius:10px;
+    -moz-transform:rotate(-16deg);
+    -ms-transform:rotate(-16deg);
+    -o-transform:rotate(-16deg);
+    -webkit-transform:rotate(-16deg);
+}
+.three span {
+    display:block;
+    position:absolute;
+    top:5px;
+    left:-34px;
+    width:37px;
+    height:8px;
+    background-color:inherit;
+    -moz-border-radius:18px 10px 12px;
+    -webkit-border-radius:18px 10px 12px;
+    border-radius:18px 10px 12px;
+    -moz-transform:rotate(-19deg);
+    -ms-transform:rotate(-19deg);
+    -o-transform:rotate(-19deg);
+    -webkit-transform:rotate(-19deg);
+}
+.four {
+    position: absolute;
+    top: 82px;
+    left: 205px;
+    width: 25px;
+    height: 8px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border-radius: 10px 10px 10px 10px;
+    -moz-transform: rotate(-13deg);
+    -ms-transform: rotate(-13deg);
+    -o-transform:rotate(-13deg);
+    -webkit-transform: rotate(-13deg);    
+}
+.four span {
+    display: block;
+    position: absolute;
+    top: 3px;
+    left: 20px;
+    width: 33px;
+    height: 8px;
+    background-color: inherit;
+    -moz-border-radius: 10px 18px 10px 15px;
+    -webkit-border-radius: 10px 18px 10px 15px;
+    border-radius: 10px 18px 10px 15px;
+    -moz-transform: rotate(13deg);
+    -ms-transform: rotate(13deg);
+    -o-transform:rotate(13deg);
+    -webkit-transform: rotate(13deg);
+}
+.five {
+    position: absolute;
+    top: 105px;
+    left: 211px;    
+    width: 22px;
+    height: 8px;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    border-radius:10px;
+}
+.five span {
+    display: block;
+    position: absolute;
+    top: 2px;
+    left: 16px;    
+    width: 25px;    
+    height: 8px;    
+    background-color: inherit;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    -moz-transform: rotate(11deg);
+    -ms-transform: rotate(11deg);
+    -o-transform:rotate(11deg);
+    -webkit-transform: rotate(11deg);
+}
+.six {
+    position: absolute;
+    top: 129px;    
+    left: 200px;
+    width: 22px;
+    height: 8px;
+    -moz-border-radius: 20px 10px 10px 18px;
+    -webkit-border-radius: 20px 10px 10px 18px;
+    border-radius: 20px 10px 10px 18px;
+    -moz-transform: rotate(11deg);
+    -ms-transform: rotate(11deg);
+    -o-transform:rotate(11deg);
+    -webkit-transform: rotate(11deg);
+}
+.six span {
+    display: block;
+    position: absolute;
+    top: 3px;
+    left: 18px;
+    width: 26px;    
+    height: 8px;
+    background-color: inherit;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border-radius: 10px 10px 10px 10px;
+    -moz-transform: rotate(13deg);
+    -ms-transform: rotate(13deg);
+    -o-transform:rotate(13deg);
+    -webkit-transform: rotate(13deg);
+}
 
-    audio {
-        opacity: 0;
-    }
-
-    .message {
-        position: fixed;
-        left: 50%;
-        transform: translateX(-50%);
-        display: flex;
-        align-items: center;
-        width: 260px;
-        background-color: rgba(0, 0, 0, 0.52);
-        padding: 0px 17px;
-        top: 25px;
-        border-radius: 6px;
-        overflow: hidden;
-        z-index: 1000;
-        opacity: 0;
-    }
-
-    /* 消息提示框内容样式 */
-    .message p {
-        line-height: 1;
-        font-size: 14px;
-        color: #6dc8c6;
-    }
-
-    .spark {
-        width: 3px;
-        height: 3px;
-        border-radius: 50%;
-        position: absolute;
-        background-color: rgba(231, 200, 160, 0.8);
-        box-shadow: 0 0 40px 0 rgba(231, 200, 160, 0.8);
-        animation: glow 5s infinite;
-    }
-
-    .medium-spark {
-        width: 7px;
-        height: 7px;
-    }
-
-    .big-spark {
-        width: 10px;
-        height: 10px;
-        box-shadow: 0 0 40px 0 #e9c9a0, 0 0 20px 0 #FFFFFF, inset 0 0 4px #FFFFFF;
-    }
-
-    .meteor {
-        width: 6px;
-        height: 6px;
-        background-color: rgba(255, 255, 255, 0.6);
-        box-shadow: 0 0 40px 0 #e9c9a0, 0 0 20px 0 #FFFFFF, inset 0 0 8px rgba(255, 255, 255, 0.6);
-        top: 0;
-        left: 80%;
-        opacity: 0.3;
-        transform: rotate(-45deg) translate(0, -50px);
-        animation: meteor 7s infinite;
-    }
-
-    .meteor:after {
-        content: '';
-        width: 20vw;
-        height: 6px;
-        border-radius: 50%;
-        background-color: rgba(255, 255, 255, 0.1);
-        box-shadow: 0 0 20px rgba(231, 200, 160, 0.4);
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
-
-    @keyframes glow {
-        0% {
-            opacity: 0.9;
-        }
-
-        50% {
-            opacity: 0.2;
-        }
-
-        100% {
-            opacity: 0.9;
-        }
-    }
-
-    @keyframes meteor {
-        0% {
-            transform: rotate(-45deg) translateX(0);
-            opacity: 0.3;
-        }
-
-        10% {
-            opacity: 1;
-        }
-
-        20% {
-            transform: rotate(-45deg) translateX(-100vw);
-            opacity: 0;
-        }
-
-        100% {
-            transform: rotate(-45deg) translateX(-100vw);
-            opacity: 0;
-        }
-    }
+#leftear {
+    position:absolute;
+    top:-16px;
+    left:-3px;
+    width:57px;
+    height:61px;
+    border:8px solid #000;
+    border-bottom-color:transparent;
+    border-right-color:transparent;
+    -moz-border-radius:20px 37px 20px 44px;
+    -webkit-border-radius:20px 37px 20px 44px;
+    border-radius:20px 37px 20px 44px;
+    -moz-transform:rotate(14deg);
+    -ms-transform:rotate(14deg);
+    -o-transform:rotate(14deg);
+    -webkit-transform:rotate(14deg);
+    transform:rotate(14deg);
+    -webkit-backface-visibility:hidden;
+}
+#leftear span {
+    position:absolute;
+    top:2px;
+    left:-1px;
+    width:68px;
+    height:61px;
+    background-color:#FFF;
+    -moz-border-radius:18px 34px 20px 44px;
+    -webkit-border-radius:18px 34px 20px 44px;
+    border-radius:18px 34px 20px 44px;
+}
+#rightear {
+    position:absolute;
+    top:-27px;
+    left:143px;
+    width:57px;
+    height:61px;
+    background-color:#FFF;
+    border:8px solid #000;
+    border-bottom-color:transparent;
+    border-right-color:transparent;
+    -moz-border-radius:20px 37px 20px 44px;
+    -webkit-border-radius:20px 37px 20px 44px;
+    border-radius:20px 37px 20px 44px;
+    -moz-transform:rotate(80deg);
+    -ms-transform:rotate(80deg);
+    -o-transform:rotate(80deg);
+    -webkit-transform:rotate(80deg);
+    -webkit-backface-visibility:hidden;
+}
+#bow {
+    position:absolute;
+    top:134px;
+    left:141px;
+    z-index:1000;
+}
+.center {
+    position:absolute;
+    left:140px;
+    width:32px;
+    height:35px;
+    background-color:#F51F27;
+    border:8px solid #000;
+    -moz-border-radius:30px;
+    -webkit-border-radius:30px;
+    border-radius:30px;
+    z-index:2;
+    -moz-transform:rotate(20deg);
+    -ms-transform:rotate(20deg);
+    -o-transform:rotate(20deg);
+    -webkit-transform:rotate(20deg);
+}
+.left {
+    position:absolute;
+    top:-33px;
+    left:99px;
+    width:46px;
+    height:62px;
+    background-color:#F51F27;
+    border:8px solid #000;
+    -moz-border-radius: 50px 50px 55px 46px;
+    -webkit-border-radius: 50px 50px 55px 46px;
+    border-radius: 50px 50px 55px 46px;
+    -moz-transform:rotate(19deg);
+    -ms-transform:rotate(19deg);
+    -o-transform:rotate(19deg);
+    -webkit-transform:rotate(19deg);
+}
+.left span {
+    position:absolute;
+    top:20px;
+    left:23px;
+    width:15px;
+    height:15px;
+    border:6px solid #000;
+    -moz-border-radius:30px;
+    -webkit-border-radius:30px;
+    border-radius:30px;
+}
+.right {
+    position:absolute;
+    top:0;
+    left:164px;
+    width:43px;
+    height:54px;
+    background-color:#F51F27;
+    border:8px solid #000;
+    -moz-border-radius:78px 48px 60px 63px;
+    -webkit-border-radius:78px 48px 60px 63px;
+    border-radius:78px 48px 60px 63px;
+    -moz-transform:rotate(22deg);
+    -ms-transform:rotate(22deg);
+    -o-transform:rotate(22deg);
+    -webkit-transform:rotate(22deg);
+}
+.right span {
+    position:absolute;
+    top:18px;
+    left:1px;
+    width:15px;
+    height:12px;
+    border:6px solid #000;
+    -moz-border-radius:30px;
+    -webkit-border-radius:30px;
+    border-radius:30px;
+}
+#body {
+    position:absolute;
+    top:295px;
+    width:250px;
+    height:150px;    
+}
+#leftarm {
+    position:absolute;
+    top:-8px;
+    left:142px;
+    width:40px;
+    height:73px;    
+    background-color:#FFF;
+    border:8px solid #000;
+    -moz-border-radius:158px 0 82px 100px;
+    -webkit-border-radius:158px 0 82px 100px;
+    border-radius:158px 0 82px 100px;
+    overflow:hidden;
+    -moz-transform:rotate(28deg);
+    -ms-transform:rotate(28deg);
+    -o-transform:rotate(28deg);
+    -webkit-transform:rotate(28deg);
+    -webkit-backface-visibility:hidden;
+}
+#leftarm span {
+    position:absolute;
+    top:-3px;
+    left:1px;
+    width:50px;
+    height:38px;
+    background-color:pink;
+    border-bottom:8px solid #000; 
+    -webkit-border-top-left-radius: 200px;
+    -moz-border-radius-topleft: 200px;
+    border-top-left-radius:200px;
+    -moz-transform:rotate(6deg);
+    -ms-transform:rotate(6deg);
+    -o-transform:rotate(6deg);
+    -webkit-transform:rotate(6deg);
+}
+#rightarm {
+    position:absolute;
+    top: -4px;
+    left: 302px;
+    height: 70px;
+    width: 40px;
+    background-color:#FFF;
+    border: 8px solid #000;
+    -moz-border-radius: 0 158px 100px 81px;
+    -webkit-border-radius: 0 158px 100px 81px;
+    border-radius: 0 158px 100px 81px;
+    overflow: hidden; 
+    -moz-transform: rotate(-28deg);
+    -ms-transform: rotate(-28deg);
+    -o-transform:rotate(-28deg);
+    -webkit-transform: rotate(-28deg);
+    -webkit-backface-visibility:hidden;
+}
+#rightarm span {
+    position:absolute;
+    top:-2px;
+    left:-4px;
+    width:41px;
+    height:36px;
+    background-color:pink;
+    border-bottom:8px solid #000;
+    -webkit-border-top-right-radius: 200px;
+    -moz-border-radius-topright: 200px;
+    border-top-right-radius:200px;
+    -moz-transform:rotate(-9deg);
+    -ms-transform:rotate(-9deg);
+    -o-transform:rotate(-9deg);
+    -webkit-transform:rotate(-9deg);
+}
+#chest {
+    position: absolute;
+    top: -32px;    
+    left: 213px;
+    width: 58px;
+    height: 54px;
+    background-color:pink;
+    border: 8px solid #000;
+    -moz-border-radius: 60px;
+    -webkit-border-radius: 60px;
+    border-radius: 60px;
+}
+#torso {
+    position:absolute;
+    top:-10px;
+    left:165px;
+    width:154px;
+    height:105px;
+    background-color:#F51F27;
+    border: 8px solid #000;
+    -moz-border-radius: 110px 110px 0 0;
+    -webkit-border-radius: 110px 110px 0 0;
+    border-radius: 110px 110px 0 0;
+    border-bottom:none;
+}
+#torso .leftshort {
+    display:block;
+    position:absolute;
+    top:92px;
+    left:-8px;
+    width:73px;
+    height:14px;
+    background-color:#F51F27;
+    border-bottom:8px solid #000;
+    border-left:8px solid #000;
+    -moz-border-radius:1px 3px 0 30px;
+    -webkit-border-radius:1px 3px 0 30px;
+    border-radius:1px 3px 0 30px;
+    z-index:3;
+    -moz-transform:rotate(2deg);
+    -ms-transform:rotate(2deg);
+    -o-transform:rotate(2deg);
+    -webkit-transform:rotate(2deg);
+}
+#torso .rightshort {
+    display:block;
+    position:absolute;
+    top:97px;
+    right:-8px;
+    width:73px;
+    height:8px;
+    background-color:#F51F27;
+    border-bottom:8px solid #000;
+    border-right:8px solid #000;
+    -moz-border-radius:3px 1px 30px 0;
+    -webkit-border-radius:3px 1px 30px 0;
+    border-radius:3px 1px 30px 0;
+    z-index:3;
+    -moz-transform:rotate(-2deg);
+    -ms-transform:rotate(-2deg);
+    -o-transform:rotate(-2deg);
+    -webkit-transform:rotate(-2deg);
+}
+.crotch {
+    position:absolute;
+    bottom:-6px;
+    left:71px;
+    width:12px;
+    height:12px;
+    background-color:#000;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    border-radius:4px;
+    -moz-transform:rotate(45deg);
+    -ms-transform:rotate(45deg);
+    -o-transform:rotate(45deg);
+    -webkit-transform:rotate(45deg);
+}
+#leftleg {
+    position:absolute;
+    top:100px;
+    left:165px;
+    width:73px;
+    height:34px;
+    background-color:#FFF;
+    border:8px solid #000;
+    -moz-border-radius:0 15px 25px 35px;
+    -webkit-border-radius:0 15px 25px 35px;
+    border-radius:0 15px 25px 35px;
+}
+#rightleg {
+    position:absolute;
+    top:100px;
+    left:246px;
+    width:73px;
+    height:34px;
+    background-color:#fff;
+    border: 8px solid #000;
+    -moz-border-radius:15px 0 35px 25px;
+    -webkit-border-radius:15px 0 35px 25px;
+    border-radius:15px 0 35px 25px;
+}
 </style>
-
 <body>
-    <!DOCTYPE html>
-    <html lang="en">
-
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>给小凝子的烟花</title>
-        <link rel="icon" type="image/x-icon" href="/favicon.ico">
-        <link rel="stylesheet" href="static/css/style.css">
-    </head>
-
-    <body onselectstart="return false">
-        <!-- 消息提示 -->
-        <div class="message">
-            <p>点击屏幕哎，可以播放背景音乐哟😜</p>
+        <div class="content">
+            <div id="head">
+                <div id="face">
+                   <div class="lefteye"></div>
+                   <div class="righteye"></div>
+                   <div class="nose"></div>
+                </div>
+                             
+                <div class="leftwhiskers one">
+                    <span></span>
+                </div>
+                <div class="leftwhiskers two">
+                    <span></span>
+                </div>
+                <div class="leftwhiskers three">
+                     <span></span>
+                </div>
+                 <div class="rightwhiskers four">
+                      <span></span>
+                 </div>
+                 <div class="rightwhiskers five">
+                      <span></span>
+                 </div>
+                 <div class="rightwhiskers six">
+                       <span></span>
+                 </div>
+                 <div id="leftear">
+                    <span></span>
+               </div>
+               <div id="rightear"></div>
+             </div>
+             <!-- 蝴蝶结 -->
+             <div id="bow">
+                <div class="left"><span></span></div>
+                <div class="center"></div>
+                <div class="right"><span></span></div>
+              </div>
+              <!-- 身体 -->
+              <div id="body">
+                <div id="leftarm"><span></span></div>
+                <div id="rightarm"><span></span></div>
+                <div id="torso">
+                     <span class="leftshort"></span>
+                     <span class="rightshort"></span>
+                     <div class="crotch"></div>
+                </div>
+                <div id="chest"></div>
+                <div id="leftleg"></div>
+                <div id="rightleg"></div>
+           </div>    
         </div>
-        <!-- 流星与星火 -->
-        <div id="backgroundRendering" style="z-index: 0;"></div>
-
-        <!--烟花-->
-        <canvas id="fireworks" style="z-index: 9999;">
-            不会吧，浏览器不支持canvas标签。
-        </canvas>
-
-        <!-- 背景音乐 -->
-        <audio id="bgm" src="./static/mp3/zuichu.mp3" loop autoplay>
-            不会吧，浏览器不支持 audio 标签。
-        </audio>
-
-        <!-- 自定义内容弹窗 -->
-        <div style="display: none">
-            <div class="shape">逢考必过，下🖌如有神</div>
-            <div class="shape">人生如逆旅，我亦是行人</div>
-            <div class="shape">春分得意马蹄疾，一日看尽长安花。</div>
-            <div class="shape">持将无色笔，夺取锦标名。</div>
-            <div class="shape">流光容易把人抛。红了樱桃，绿了芭蕉</div>
-            <div class="shape">翩若惊鸿，宛若游龙。</div>
-            <div class="shape">桃之夭夭，灼灼其华。</div>
-            <div class="shape">宠辱不惊，看庭前花开花落；去留无意，望天上云卷云舒。</div>
-            <div class="shape">不管现在将来，余生，都愿你安好，世间一切的美好都要与你息息相关！💫</div>
-        </div>
-
-        <script src="static/js/main.js"></script>
-    </body>
-
-    </html>
-
 </body>
-<script>
-    // 初始化内容
-    var wH = window.innerHeight;
-    var wW = window.innerWidth;
-    let backgroundRendering = document.getElementById("backgroundRendering");
-    var generateStars = function generateStars(f) {
-        for (var e = 0; e < f; e++) {
-            var single = document.createElement("div");
-            single.className = e % 20 == 0 ? "spark big-spark" : e % 9 == 0 ? "spark medium-spark" : "star";
-            single.setAttribute("style", "top:" + Math.round(Math.random() * wH) + "px;left:" + Math.round(Math.random() * wW) + "px;animation-duration:" + (Math.round(Math.random() * 3000) + 3000) + "ms;animation-delay:" + Math.round(Math.random() * 3000) + "ms;");
-            backgroundRendering.appendChild(single);
-        }
-    };
-    generateStars(getRandom(140, 240));
-
-
-    // 全局变量 提供内容/对象存储
-    let fireworksCanvas = document.getElementById("fireworks");
-    let currentFireworks = document.createElement("canvas");
-    let currentObject = currentFireworks.getContext("2d");
-    let fireworksObject = fireworksCanvas.getContext("2d");
-
-    currentFireworks.width = fireworksCanvas.width = window.innerWidth;
-    currentFireworks.height = fireworksCanvas.height = window.innerHeight;
-    let fireworksExplosion = [];
-    let autoPlayFlag = false;
-
-    // 自动加载烟花动画
-    window.onload = function () {
-        drawFireworks();
-        lastTime = new Date();
-        animationEffect();
-        // 背景音乐
-        let audio = document.getElementById('bgm');
-        document.querySelector("body").onclick = function () {
-            if (!autoPlayFlag) {
-                audio.play();
-                autoPlayFlag = true;
-            }
-        }
-        for (let i = 0; i <= 10; i++) {
-            setTimeout(function () {
-                document.querySelector("body > div.message").style.opacity = i / 10;
-            }, i * 60 + 2000)
-        };
-        for (let i = 0; i <= 10; i++) {
-            setTimeout(function () {
-                document.querySelector("body > div.message").style.opacity = 1 - i / 10;
-            }, i * 60 + 8000)
-        };
-    };
-
-    let lastTime;
-
-
-    // 烟花动画效果
-    function animationEffect() {
-        fireworksObject.save();
-        fireworksObject.fillStyle = "rgba(0,5,25,0.1)";
-        fireworksObject.fillRect(0, 0, fireworksCanvas.width, fireworksCanvas.height);
-        fireworksObject.restore();
-        let newTime = new Date();
-        if (newTime - lastTime > getRandom(10, 1600) + (window.innerHeight - 767) / 2) {
-            let random = Math.random() * 100 > 15;
-            let x = getRandom(0, (fireworksCanvas.width));
-            let y = getRandom(0, 400);
-            if (random) {
-                let bigExplode = new explode(
-                    getRandom(0, fireworksCanvas.width),
-                    getRandom(1, 3),
-                    "#FFF",
-                    {
-                        x: x,
-                        y: y,
-                    }
-                );
-                fireworksExplosion.push(bigExplode);
-
-            } else {
-                let x = getRandom(fireworksCanvas.width / 2 - 300, fireworksCanvas.width / 2 + 300);
-                let y = getRandom(0, 350);
-                let bigExplode = new explode(
-                    getRandom(0, fireworksCanvas.width),
-                    getRandom(1, 3),
-                    "#FFF",
-                    {
-                        x: x,
-                        y: y,
-                    },
-                    document.querySelectorAll(".shape")[
-                    parseInt(getRandom(0, document.querySelectorAll(".shape").length))
-                    ]
-                );
-                fireworksExplosion.push(bigExplode);
-            }
-            lastTime = newTime;
-        }
-        sparks.foreach(function () {
-            this.paint();
-        });
-        fireworksExplosion.foreach(function () {
-            let that = this;
-            if (!this.dead) {
-                this._move();
-                this._drawLight();
-            } else {
-                this.explodes.foreach(function (index) {
-                    if (!this.dead) {
-                        this.moveTo();
-                    } else {
-                        if (index === that.explodes.length - 1) {
-                            fireworksExplosion[fireworksExplosion.indexOf(that)] = null;
-                        }
-                    }
-                });
-            }
-        });
-        setTimeout(animationEffect, 16);
-    }
-
-    Array.prototype.foreach = function (callback) {
-        for (let i = 0; i < this.length; i++) {
-            if (this[i] !== null) {
-                callback.apply(this[i], [i]);
-            }
-        }
-    };
-
-    let explode = function (x, r, c, explodeArea, shape) {
-        this.explodes = [];
-        this.x = x;
-        this.y = fireworksCanvas.height + r;
-        this.r = r;
-        this.c = c;
-        this.shape = shape || false;
-        this.explodeArea = explodeArea;
-        this.dead = false;
-        this.ba = parseInt(getRandom(80, 200));
-    };
-    explode.prototype = {
-        _paint: function () {
-            fireworksObject.save();
-            fireworksObject.beginPath();
-            fireworksObject.arc(this.x, this.y, this.r, 0, 2 * Math.PI);
-            fireworksObject.fillStyle = this.c;
-            fireworksObject.fill();
-            fireworksObject.restore();
-        },
-        _move: function () {
-            let dx = this.explodeArea.x - this.x,
-                dy = this.explodeArea.y - this.y;
-            this.x = this.x + dx * 0.01;
-            this.y = this.y + dy * 0.01;
-            if (Math.abs(dx) <= this.ba && Math.abs(dy) <= this.ba) {
-                if (this.shape) {
-                    this._shapeExplode();
-                } else {
-                    this._explode();
-                }
-                this.dead = true;
-            } else {
-                this._paint();
-            }
-        },
-        _drawLight: function () {
-            fireworksObject.save();
-            fireworksObject.fillStyle = "rgba(255,228,150,0.3)";
-            fireworksObject.beginPath();
-            fireworksObject.arc(this.x, this.y, this.r + 3 * Math.random() + 1, 0, 2 * Math.PI);
-            fireworksObject.fill();
-            fireworksObject.restore();
-        },
-        _explode: function () {
-            let embellishmentNum = getRandom(30, 200);
-            let style = getRandom(0, 10) >= 5 ? 1 : 2;
-            let color;
-            if (style === 1) {
-                color = {
-                    a: parseInt(getRandom(128, 255)),
-                    b: parseInt(getRandom(128, 255)),
-                    c: parseInt(getRandom(128, 255)),
-                };
-            }
-            let fullRange = parseInt(getRandom(300, 400));
-            for (let i = 0; i < embellishmentNum; i++) {
-                if (style === 2) {
-                    color = {
-                        a: parseInt(getRandom(128, 255)),
-                        b: parseInt(getRandom(128, 255)),
-                        c: parseInt(getRandom(128, 255)),
-                    };
-                }
-                let a = getRandom(-Math.PI, Math.PI);
-                let x = getRandom(0, fullRange) * Math.cos(a) + this.x;
-                let y = getRandom(0, fullRange) * Math.sin(a) + this.y;
-                let radius = getRandom(0, 2);
-                let embellishment = new newEmbellishment(this.x, this.y, radius, color, x, y);
-                this.explodes.push(embellishment);
-            }
-        },
-        _shapeExplode: function () {
-            let that = this;
-            putValue(currentFireworks, currentObject, this.shape, 5, function (dots) {
-                let dx = fireworksCanvas.width / 2 - that.x;
-                let dy = fireworksCanvas.height / 2 - that.y;
-                let color;
-                for (let i = 0; i < dots.length; i++) {
-                    color = {
-                        a: dots[i].a,
-                        b: dots[i].b,
-                        c: dots[i].c,
-                    };
-                    let x = dots[i].x;
-                    let y = dots[i].y;
-                    let radius = 1;
-                    let embellishment = new newEmbellishment(that.x, that.y, radius, color, x - dx, y - dy);
-                    that.explodes.push(embellishment);
-                }
-            });
-        },
-    };
-
-    fireworksCanvas.onclick = function (evt) {
-        let x = evt.clientX;
-        let y = evt.clientY;
-        let explode = new explode(
-            getRandom(fireworksCanvas.width / 3, (fireworksCanvas.width * 2) / 3),
-            2,
-            "#FFF",
-            {
-                x: x,
-                y: y,
-            }
-        );
-        fireworksExplosion.push(explode);
-    };
-
-    function putValue(fireworks, context, ele, dr, callback) {
-        context.clearRect(0, 0, fireworksCanvas.width, fireworksCanvas.height);
-        let img = new Image();
-        let dots;
-        if (ele.innerHTML.indexOf("img") >= 0) {
-            img.src = ele.getElementsByTagName("img")[0].src;
-            implode(img, function () {
-                context.drawImage(
-                    img,
-                    fireworksCanvas.width / 2 - img.width / 2,
-                    fireworksCanvas.height / 2 - img.width / 2
-                );
-                let dots = gettingData(fireworks, context, dr);
-                callback(dots);
-            });
-        } else {
-            let text = ele.innerHTML;
-            context.save();
-            let fontSize = getRandom(3, 11);
-            context.font = fontSize + "vw 宋体 bold";
-            context.textAlign = "center";
-            context.textBaseline = "middle";
-            context.fillStyle =
-                "rgba(" +
-                parseInt(getRandom(128, 255)) +
-                "," +
-                parseInt(getRandom(128, 255)) +
-                "," +
-                parseInt(getRandom(128, 255)) +
-                " , 1)";
-            context.fillText(text, fireworksCanvas.width / 2, fireworksCanvas.height / 2);
-            context.restore();
-            dots = gettingData(fireworks, context, dr);
-            callback(dots);
-        }
-    }
-
-    function implode(img, callback) {
-        if (img.complete) {
-            callback.call(img);
-        } else {
-            img.onload = function () {
-                callback.call(this);
-            };
-        }
-    }
-
-    function gettingData(fireworks, context, dr) {
-        let imgData = context.getImageData(0, 0, fireworksCanvas.width, fireworksCanvas.height);
-        context.clearRect(0, 0, fireworksCanvas.width, fireworksCanvas.height);
-        let dots = [];
-        for (let x = 0; x < imgData.width; x += dr) {
-            for (let y = 0; y < imgData.height; y += dr) {
-                let i = (y * imgData.width + x) * 4;
-                if (imgData.data[i + 3] > 128) {
-                    let dot = {
-                        x: x,
-                        y: y,
-                        a: imgData.data[i],
-                        b: imgData.data[i + 1],
-                        c: imgData.data[i + 2],
-                    };
-                    dots.push(dot);
-                }
-            }
-        }
-        return dots;
-    }
-
-    function getRandom(a, b) {
-        return Math.random() * (b - a) + a;
-    }
-
-    let maxRadius = 1,
-        sparks = [];
-
-    function drawFireworks() {
-        for (let i = 0; i < 100; i++) {
-            let spark = new newSpark();
-            sparks.push(spark);
-            spark.paint();
-        }
-    }
-
-    // 新建星火位置
-    let newSpark = function () {
-        this.x = Math.random() * fireworksCanvas.width;
-
-        this.y = Math.random() * 2 * fireworksCanvas.height - fireworksCanvas.height;
-
-        this.r = Math.random() * maxRadius;
-
-    };
-
-    newSpark.prototype = {
-        paint: function () {
-            fireworksObject.save();
-            fireworksObject.beginPath();
-            fireworksObject.arc(this.x, this.y, this.r, 0, 2 * Math.PI);
-            fireworksObject.fillStyle = "rgba(255,255,255," + this.r + ")";
-            fireworksObject.fill();
-            fireworksObject.restore();
-        },
-    };
-    // 烟花点缀生成
-    let newEmbellishment = function (centerX, centerY, radius, color, tx, ty) {
-        this.tx = tx;
-        this.ty = ty;
-        this.x = centerX;
-        this.y = centerY;
-        this.dead = false;
-        this.radius = radius;
-        this.color = color;
-    };
-    newEmbellishment.prototype = {
-        paint: function () {
-            fireworksObject.save();
-            fireworksObject.beginPath();
-            fireworksObject.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
-            fireworksObject.fillStyle =
-                "rgba(" + this.color.a + "," + this.color.b + "," + this.color.c + ",1)";
-            fireworksObject.fill();
-            fireworksObject.restore();
-        },
-        moveTo: function () {
-            this.ty = this.ty + 0.3;
-            let dx = this.tx - this.x,
-                dy = this.ty - this.y;
-            this.x = Math.abs(dx) < 0.1 ? this.tx : this.x + dx * 0.1;
-            this.y = Math.abs(dy) < 0.1 ? this.ty : this.y + dy * 0.1;
-            if (dx === 0 && Math.abs(dy) <= 80) {
-                this.dead = true;
-            }
-            this.paint();
-        },
-    };
-
-
-</script>
-
 </html>
